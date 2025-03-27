@@ -48,11 +48,7 @@ const catListElement = document.querySelector('#displayCatFact');
 
 async function fetchApi() {
   let data = await fetch('https://catfact.ninja/facts');
-  console.log(data);
   const response = await data.json();
-  console.log(response.data);
-  console.log(response.data[1]);
-  console.log(response.data[1].fact);
 
   const responseData = response.data;
   let time = 0;
@@ -87,3 +83,19 @@ fetchApi();
 //VI LAGER EN CHUCK NORRIS KNAPP
 
 //API-link: https://api.chucknorris.io/jokes/random
+
+let chuckButton = document.querySelector("#ChuckBtn")
+let jokeElement = document.querySelector("#ChuckText")
+
+chuckButton.addEventListener("click", 
+  getChuckApi
+)
+
+async function getChuckApi() {
+  let chuckJoke = await fetch("https://api.chucknorris.io/jokes/random")
+  let response = await chuckJoke.json()
+
+  jokeElement.textContent = response.value
+}
+
+

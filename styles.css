@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: brown;
+}
+
 /* HEADER */
 header {
   display: flex;
@@ -28,6 +32,18 @@ header {
 }
 
 /* MAIN */
+
+button {
+ background-color: blue;
+ border-radius: 10px;
+}
+
+
+#ChuckText {
+  font-size: 30px;
+  font-weight: 900;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -36,14 +52,23 @@ section {
   gap: 25px;
 }
 
+.displayCatFact li {
+  animation-name: catFactList;
+  animation-duration: 300ms;
+  animation-timing-function: 50ms;
+  animation-fill-mode: forwards;
+}
+
 .pokeCard,
 .displayCatFact {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 2px solid black;
+  align-items: start;
+  border: 5px solid rgb(255, 0, 0);
+  border-radius: 20px;
   width: 800px;
+  background-color: brown;
 }
 
 .pokeCard img {
@@ -54,4 +79,20 @@ section {
 footer {
   display: flex;
   justify-content: center;
+}
+
+
+@keyframes catFactList {
+  0% {
+    font-size: 0px;
+    
+
+  }
+  50% {
+    font-size: 17px;
+    background-color: rgb(234, 255, 101);
+  }
+  100% {
+    font-size: 15px;
+  }
 }
