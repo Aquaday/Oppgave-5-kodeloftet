@@ -44,17 +44,26 @@ button {
 
 button:hover {
   cursor: pointer;
-  font-size: 150%;
+  scale: 2;
 }
 
 #ChuckSection {
-  height: 50vh;
+  min-height: 50vh;
   background-color: orange;
 }
 
 #ChuckText {
   font-size: 15px;
   font-weight: 400;
+  text-align: center;
+  max-width: 80%;
+}
+
+.ChuckTextAnimation {
+  animation-name: catFactList;
+  animation-duration: 2000ms;
+  animation-timing-function: 50ms;
+  animation-fill-mode: forwards;
 }
 
 .sectionHeader {
@@ -64,6 +73,7 @@ button:hover {
   font-weight: 400;
   font-style: normal;
   color: black;
+  text-align: center;
 }
 
 section {
@@ -81,12 +91,13 @@ section {
 
 .displayCatFact li {
   animation-name: catFactList;
-  animation-duration: 500ms;
+  animation-duration: 2000ms;
   animation-timing-function: 50ms;
   animation-fill-mode: forwards;
   font-size: 10px;
   padding-bottom: 20px;
 }
+
 
 .pokeCard,
 .displayCatFact {
@@ -115,12 +126,16 @@ footer {
     color: white;
 
   }
-  50% {
-    font-size: 17px;
-    color: rgb(138, 138, 138);
+  25% {
+    font-size: 15px;
+    color: yellow;
   }
-  100% {
+  50% {
     font-size: 15px;
     color: black;
+  }
+  100% {
+    color: black;
+    font-size: 15px;
   }
 }

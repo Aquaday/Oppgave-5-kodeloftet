@@ -87,15 +87,20 @@ fetchApi();
 let chuckButton = document.querySelector("#ChuckBtn")
 let jokeElement = document.querySelector("#ChuckText")
 
-chuckButton.addEventListener("click", 
+chuckButton.addEventListener("click",
+
   getChuckApi
+  
 )
 
 async function getChuckApi() {
+  jokeElement.textContent = ""
+  jokeElement.classList.remove("ChuckTextAnimation")
   let chuckJoke = await fetch("https://api.chucknorris.io/jokes/random")
   let response = await chuckJoke.json()
 
   jokeElement.textContent = response.value
+  jokeElement.classList.add("ChuckTextAnimation")
 }
 
 
